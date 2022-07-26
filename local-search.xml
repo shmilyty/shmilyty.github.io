@@ -112,82 +112,11 @@
   
   
   <entry>
-    <title>关于QQ机器人</title>
-    <link href="/bot/"/>
-    <url>/bot/</url>
-    
-    <content type="html"><![CDATA[<p>最近网课在家里摸鱼，搭建了一个bot（其实是纯造轮子）。框架为 <ahref="https://v2.nonebot.dev/">NoneBot</a>。</p><span id="more"></span><p>太菜了，自己写不起插件，因此直接找了几个别人的。</p><p>（图片是链接，点击可以进入原仓库）</p><hr /><ul><li><a href="https://github.com/MeetWq/nonebot-plugin-emojimix"><imgsrc="https://cdn.jsdelivr.net/gh/shmilyty/img/data/202203241448130.png" /></a></li></ul><hr /><p>本来想把每个的Demo和仓库链接全部放上去的，但是太懒了，所以打算直接放名字，可以根据名字在https://v2.nonebot.dev/store找到插件。</p><p><strong>请注意下划线，警惕被<code>-</code>替代！！！</strong></p><ul><li><code>nonebot_plugin_emojimix</code>：这个似乎在每一个群都非常受欢迎</li><li><code>nonebot_plugin_chess</code>：不要装这个，会变得不幸（指安装这个以后再装其他插件就run不了）</li><li><code>nonebot_plugin_phlogo</code>：很多人都加bot好友然后私聊它去做这个表情（后来改成了下面的<code>logo</code>）</li><li><code>nonebot_plugin_nokia</code></li><li><code>nonebot_plugin_crazy_thursday</code>：似乎用不了，反正无法输出文案</li><li><code>nonebot_plugin_remake</code>：不知道为啥活不到30岁以上（虽然代码里是有这个可能性的）</li><li><code>nonebot_plugin_caiyunai</code></li><li><code>nonebot_plugin_antiflash</code></li><li><code>nonebo_plugin_setu_now</code>：挺好用的。</li><li><code>nonebot_plugin_wordle</code></li><li><code>nonebot_plugin_repeat</code>：群友不给我复读的机会（悲）</li><li><code>nonebot_plugin_logo</code>：感觉不错</li><li><code>nonebot_plugin_memes</code></li><li><code>nonebot_plugin_petpet</code></li></ul><hr /><p>有一些插件我不会用，如果不介意可以在教教评论区浇浇</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>entertainment</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>python</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>capoo</title>
-    <link href="/capoo/"/>
-    <url>/capoo/</url>
-    
-    <content type="html"><![CDATA[<p>太可爱了啊啊啊啊啊啊&gt;_&lt;</p><span id="more"></span><video src="https://cdn.jsdelivr.net/gh/shmilyty/img/data/202203201941778.mp4" controls width="100%" poster="/img/main.jpg"></video><p><imgsrc="https://cdn.jsdelivr.net/gh/shmilyty/img/data/202203202031539.gif" /></p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">&lt;video <span class="hljs-attribute">src</span>=<span class="hljs-string">&quot;videofile.mp4&quot;</span> controls <span class="hljs-attribute">poster</span>=<span class="hljs-string">&quot;posterimage.jpg&quot;</span>&gt;&lt;/video&gt;<br></code></pre></td></tr></table></figure><p><imgsrc="https://cdn.jsdelivr.net/gh/shmilyty/img/data/202203202046358.png" /></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>entertainment</category>
-      
-    </categories>
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>拉格朗日插值浅谈</title>
-    <link href="/lagrange/"/>
-    <url>/lagrange/</url>
-    
-    <content type="html"><![CDATA[<p>最近虽然有一车子事情，但是还是感觉很空虚，所以写点东西来颓废一下。</p><span id="more"></span><blockquote><p><span class="math inline">\(1+2+\dots+n=\frac {n\times (n+1)}2\)</span></p><p><span class="math inline">\(1^2+2^2+\dots+n^2=\frac{n\times(n+1)\times(2n+1)} 2\)</span></p><p><span class="math inline">\(1^3+2^3+\dots+n^3=\frac{n^2\times(n+1)^2}4\)</span></p><p><span class="math inline">\(\cdots\)</span></p><p>如何快速计算 <span class="math inline">\(1^k+2^k+\dots+n^k\)</span>​？​</p></blockquote><p>介绍一个神奇的东西：拉格朗日插值法。</p><p>咳咳，收起你头脑中奇怪的联想。</p><hr /><h1 id="概述和证明">概述和证明</h1><blockquote><p>前置知识：初中数学</p></blockquote><p>众所周知，给定平面上两个 <span class="math inline">\(x\)</span>值不同的点，可以确定一条直线（一次函数）；</p><p>给定三个 <span class="math inline">\(x\)</span>值不同的点，可以确定一个二次函数。</p><p>大胆的猜想一下，给定 <span class="math inline">\(n+1\)</span> 个<span class="math inline">\(x\)</span> 值不同的点，可以确定一个 <spanclass="math inline">\(n\)</span>​ 次函数，事实上的确如此。</p><p>给你一个函数，要你带入 <span class="math inline">\(x\)</span>​求值非常简单，但是给定 <span class="math inline">\(n+1\)</span>​个点，要求还原原本的 <span class="math inline">\(n\)</span>​次函数并非容易事。你无非就两种选择：</p><p><strong>选择</strong>Ⅰ：我会代入！</p><p>求解一个 <span class="math inline">\(n+1\)</span>​ 元一次方程组。</p><p><strong>选择</strong>Ⅱ：我会用知乎！</p><p><ahref="https://www.zhihu.com/search?type=content&amp;q=%E6%B1%82k%E6%AC%A1%E6%96%B9%E5%92%8C">一头雾水。jpg</a></p><p><strong>选择</strong>Ⅲ：我会推公式！</p><p>普通人和拉格朗日的区别在于普通人只满足于已有的做法，而拉格朗日却探索出了一种性能更高，更方便的做法：其中需要借助的核心公式被命名为拉格朗日插值公式。</p><p>一般的介绍到这里就基本上完结撒花了：先写出那个看似复杂的公式，然后来一句“至于怎么证我也不会”。而我打算使用四种完全不同的角度证明这个公式。（虽然目前只弄懂了其中的一种）</p><p><strong>每一段都标注了前置知识，如果不会而且对这个不感兴趣的可以直接跳过，如果不会但感兴趣的可以自己去钻研一下。</strong></p><h2 id="从多项式的角度">1. 从多项式的角度</h2><blockquote><p>前置知识：初中数学</p><p>需要注意的是，此时定义 <span class="math inline">\(n\)</span>次函数是未化简之前的最高次，比如认为 <spanclass="math inline">\(0x^2-x\)</span> 是二次函数。</p></blockquote><p>思路：先证明假如存在一个<strong>唯一</strong>的 <spanclass="math inline">\(n\)</span>​ 次函数 <spanclass="math inline">\(f(x)\)</span>​，该函数经过给定的 <spanclass="math inline">\(n+1\)</span>​ 个点 <spanclass="math inline">\((a_1,b_1)\dots(a_{n+1},b_{n+1})\)</span>​，那么这个函数唯一，再用你聪明的大脑构造出一个函数即可。</p><p>反证法：假设存在两个<strong>不同的</strong> <spanclass="math inline">\(n\)</span> 次函数 <spanclass="math inline">\(f(x),g(x)\)</span>，使得这两个函数同时经过给定的<span class="math inline">\(n+1\)</span>​ 个点。</p><p>设 <span class="math inline">\(p(x)=f(x)-g(x)\)</span>​，那么 <spanclass="math inline">\(p(x)\)</span>​ 也是一个 <spanclass="math inline">\(n\)</span>​ 次函数，而且当 <spanclass="math inline">\(x=a_1,a_2,\dots,a_{n+1}\)</span> 时，<spanclass="math inline">\(p(x)=0\)</span>。</p><p>但是一波冷静分析后发现，一个 <span class="math inline">\(n\)</span>次函数怎么会和 <span class="math inline">\(x\)</span> 轴有 <spanclass="math inline">\(n+1\)</span> 个交点呢？只有一种可能：<spanclass="math inline">\(p(x)=0\)</span>，即 <spanclass="math inline">\(f(x)=g(x)\)</span>，矛盾。</p><p>第一步结束后，只需要构造出一个 <span class="math inline">\(n\)</span>次函数，使其经过这 <span class="math inline">\(n+1\)</span>个点就可以了。这看上去还是很不可做，所以先退一步思考，假如有辅助函数<spanclass="math inline">\(F_1(x),F_2(x),\dots,F_{n+1}(x)\)</span>，而且满足如下特点：</p><p><span class="math display">\[F_i(x)=\begin{cases}1\space x=a_i\\0\space otherwise\end{cases}\]</span></p><p>那么就可以写出 <span class="math inline">\(f(x)\)</span> 了： <spanclass="math inline">\(f(x)=F_1(x)\times b_1+F_2(x)\timesb_2+\dots+F_{n+1}(x)\times b_{n+1}\)</span></p><p>至于 <span class="math inline">\(F_i\)</span> 如何构造也不难：</p><p><span class="math display">\[F_i(x)=\frac {x-a_1} {a_i-a_1}\times \frac {x-a_2} {a_i-a_2}\times\dots\times \frac {x-a_{i-1}} {a_i-a_{i-1}}\times \frac {x-a_{i+1}}{a_i-a_{i+1}}\times\dots\times \frac {x-a_n} {a_i-a_n}\]</span></p><p>可以自行检验一下，当 <span class="math inline">\(x=a_i\)</span>时，所有项都是 <span class="math inline">\(1\)</span>。当 <spanclass="math inline">\(x=a_l(l\neq i)\)</span>​ 时，必然有一项的值为 <spanclass="math inline">\(0\)</span>，所以结果就是 <spanclass="math inline">\(0\)</span>。</p><p>那么最后的公式完整地写出来就是：</p><p><span class="math display">\[f(x)=\sum_{i=1}^{n+1}b_i\prod_{l\neq i}\frac {x-a_l} {a_i-a_l}\]</span></p><p>被称为<strong>Lagrange 插值公式</strong>。</p><h2 id="中国剩余定理">2. 中国剩余定理</h2><blockquote><p>咕咕咕</p></blockquote><p><img src="/img/gugugu.gif" /></p><h2 id="cramer-法则">3. Cramer 法则</h2><blockquote><p>咕咕咕</p></blockquote><p><img src="/img/gugugu.gif" /></p><h2 id="向量空间">4. 向量空间</h2><blockquote><p>咕咕咕</p></blockquote><p><img src="/img/gugugu.gif" /></p><h1 id="应用">应用</h1><p>回到一开始提出的问题：求 <spanclass="math inline">\(\sum_{i=1}^ni^k\)</span>​ 。</p><p>如果直接计算，即对于每个数单独计算并加起来，时间复杂度（可以理解为运算量）是<span class="math inline">\(O(n\log k)\)</span>​的。但是根据常识（包括一开始的给出的公式），可以发现这可以写成一个 <spanclass="math inline">\(n\)</span>​ 为未知数的 <spanclass="math inline">\(k+1\)</span>​ 次多项式 <spanclass="math inline">\(f(x)\)</span>​​，虽然我们并不知道它具体是是什么，也不在乎。</p><p>现在要求的值其实就是 <span class="math inline">\(f(n)\)</span>​​的值，为了求这个值，我们只需要找到 <spanclass="math inline">\(f(x)\)</span>​​ 经过的 <spanclass="math inline">\(k+2\)</span>​​​个点，然后利用拉格朗日插值公式就可以了，只要是正常人取的这 <spanclass="math inline">\(k+2\)</span> 个点都应该是 <spanclass="math inline">\(a_i=i\)</span> 时的结果，因为这样对应的 <spanclass="math inline">\(b_i\)</span> 比较好求。</p><p>此时总运算量为 <span class="math inline">\(O(k^2)\)</span>​ 的，与<span class="math inline">\(n\)</span>​ 无关，也就是说 <spanclass="math inline">\(n\)</span>​可以取很大的值，这也是为什么拉格朗日插值有时可以用于优化某一维较大的dp。</p><h2 id="一些优化">一些优化</h2><p><ahref="http://codeforces.com/problemset/problem/622/F">CF622F</a></p><p>这一题也算的上是一道名题了，就是我上面的例题。但是我们可以用在本题中使用<span class="math inline">\(O(k)\)</span> 的时间复杂度完成插值。</p><p>首先特判 <span class="math inline">\(n\le k+2\)</span>的情况，因为这些点已经被预处理出来了。</p><p>由于 <spanclass="math inline">\(a_i=i\)</span>，那么现在将原公式变形可得：</p><p><span class="math display">\[f(n)=\sum_{i=1}^{k+2}b_i \frac {\prod_{l=1}^{k+2}(n-l)}{(n-i)(i-1)!(i-(k+2))!}\]</span></p><p>这显然可以在 <span class="math inline">\(O(k)\)</span>的时间内被计算出来，当然，预处理的复杂度会多一个 <spanclass="math inline">\(\log_k\)</span>。</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>entertainment</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>maths</tag>
-      
-      <tag>poly</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>Introductions(?)</title>
     <link href="/something/"/>
     <url>/something/</url>
     
-    <content type="html"><![CDATA[<p>算是一些阅读须知吧（强烈推荐阅读）。</p><span id="more"></span><p>本博客永久链接：<code>shmilyty.github.io</code>，会自动跳转到当前域名。</p><p>国内同步站：<code>https://shmilyty.gitee.io</code>，处于特殊原因，被加密的博文只能在该页面查看。</p><h1 id="关于题解">关于题解</h1><p>我以前在网上找题解的时候总是特别希望不要光口胡，最好给个代码之类的，一个是学习优秀的实现方法，另一方面有时候讲的实在是令人云里雾里。</p><p>所以我在所有<strong>无法看到别人提交记录</strong>的题里面都会附上我的代码。（但是为了简短会去掉缺省源）</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">pragma</span> GCC optimize(<span class="hljs-string">&quot;Ofast&quot;</span>)</span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> int long long</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> <span class="hljs-keyword">elif</span> <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> ALL(x) x.begin(),x.end()</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> lowbit(x) (x&amp;(-x))</span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">fileio</span><span class="hljs-params">(<span class="hljs-type">const</span> string &amp;s)</span></span><br><span class="hljs-function"></span>&#123;<br><span class="hljs-built_in">freopen</span>((s+<span class="hljs-string">&quot;.in&quot;</span>).<span class="hljs-built_in">c_str</span>(),<span class="hljs-string">&quot;r&quot;</span>,stdin);<br><span class="hljs-built_in">freopen</span>((s+<span class="hljs-string">&quot;.out&quot;</span>).<span class="hljs-built_in">c_str</span>(),<span class="hljs-string">&quot;w&quot;</span>,stdout);<br>&#125;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> INF=<span class="hljs-number">4e18</span>;<br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-type">int</span> <span class="hljs-title">read</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br><span class="hljs-type">int</span> x=<span class="hljs-number">0</span>;<br><span class="hljs-type">bool</span> flag=<span class="hljs-number">1</span>;<br><span class="hljs-type">char</span> c=<span class="hljs-built_in">getchar</span>();<br><span class="hljs-keyword">while</span>(c&lt;<span class="hljs-string">&#x27;0&#x27;</span>||c&gt;<span class="hljs-string">&#x27;9&#x27;</span>)<br>&#123;<br><span class="hljs-keyword">if</span>(c==<span class="hljs-string">&#x27;-&#x27;</span>)<br>flag=<span class="hljs-number">0</span>;<br>c=<span class="hljs-built_in">getchar</span>();<br>&#125;<br><span class="hljs-keyword">while</span>(c&gt;=<span class="hljs-string">&#x27;0&#x27;</span>&amp;&amp;c&lt;=<span class="hljs-string">&#x27;9&#x27;</span>)<br>&#123;<br>x=(x&lt;&lt;<span class="hljs-number">1</span>)+(x&lt;&lt;<span class="hljs-number">3</span>)+c-<span class="hljs-string">&#x27;0&#x27;</span>;<br>c=<span class="hljs-built_in">getchar</span>();<br>&#125;<br><span class="hljs-keyword">return</span> (flag?x:~(x<span class="hljs-number">-1</span>));<br>&#125;<br></code></pre></td></tr></table></figure><h1 id="关于友链">关于友链</h1><p>目前还没有人找我挂友链，因此我暂时不打算开通这一页。</p><h1 id="关于评论">关于评论</h1><p>众所周知，不需要登录，只需要填一下昵称即可。</p><p>但是多填点不香吗？</p><blockquote><p><del>咕咕咕</del> To be continued.</p></blockquote><p><img src="/img/gugugu.gif" /></p>]]></content>
+    <content type="html"><![CDATA[<p>算是一些阅读须知吧（强烈推荐阅读）。</p><span id="more"></span><p>本博客永久链接：<code>shmilyty.github.io</code>，会自动跳转到当前域名。</p><p>国内同步站：<code>https://shmilyty.gitee.io</code>，处于特殊原因，被加密的博文只能在该页面查看。</p><h1 id="关于题解">关于题解</h1><p>我以前在网上找题解的时候总是特别希望不要光口胡，最好给个代码之类的，一个是学习优秀的实现方法，另一方面有时候讲的实在是令人云里雾里。</p><p>所以我在所有<strong>无法看到别人提交记录</strong>的题里面都会附上我的代码。（但是为了简短会去掉缺省源）</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">pragma</span> GCC optimize(<span class="hljs-string">&quot;Ofast&quot;</span>)</span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> int long long</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> <span class="hljs-keyword">elif</span> <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> ALL(x) x.begin(),x.end()</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> lowbit(x) (x&amp;(-x))</span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">fileio</span><span class="hljs-params">(<span class="hljs-type">const</span> string &amp;s)</span></span><br><span class="hljs-function"></span>&#123;<br><span class="hljs-built_in">freopen</span>((s+<span class="hljs-string">&quot;.in&quot;</span>).<span class="hljs-built_in">c_str</span>(),<span class="hljs-string">&quot;r&quot;</span>,stdin);<br><span class="hljs-built_in">freopen</span>((s+<span class="hljs-string">&quot;.out&quot;</span>).<span class="hljs-built_in">c_str</span>(),<span class="hljs-string">&quot;w&quot;</span>,stdout);<br>&#125;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> INF=<span class="hljs-number">4e18</span>;<br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-type">int</span> <span class="hljs-title">read</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br><span class="hljs-type">int</span> x=<span class="hljs-number">0</span>;<br><span class="hljs-type">bool</span> flag=<span class="hljs-number">1</span>;<br><span class="hljs-type">char</span> c=<span class="hljs-built_in">getchar</span>();<br><span class="hljs-keyword">while</span>(c&lt;<span class="hljs-string">&#x27;0&#x27;</span>||c&gt;<span class="hljs-string">&#x27;9&#x27;</span>)<br>&#123;<br><span class="hljs-keyword">if</span>(c==<span class="hljs-string">&#x27;-&#x27;</span>)<br>flag=<span class="hljs-number">0</span>;<br>c=<span class="hljs-built_in">getchar</span>();<br>&#125;<br><span class="hljs-keyword">while</span>(c&gt;=<span class="hljs-string">&#x27;0&#x27;</span>&amp;&amp;c&lt;=<span class="hljs-string">&#x27;9&#x27;</span>)<br>&#123;<br>x=(x&lt;&lt;<span class="hljs-number">1</span>)+(x&lt;&lt;<span class="hljs-number">3</span>)+c-<span class="hljs-string">&#x27;0&#x27;</span>;<br>c=<span class="hljs-built_in">getchar</span>();<br>&#125;<br><span class="hljs-keyword">return</span> (flag?x:~(x<span class="hljs-number">-1</span>));<br>&#125;<br></code></pre></td></tr></table></figure><h1 id="关于友链">关于友链</h1><p><del>目前还没有人找我挂友链，因此我暂时不打算开通这一页。</del></p><p>居然有人会找我挂友链，已经开通了。</p><h1 id="关于评论">关于评论</h1><p>众所周知，不需要登录，只需要填一下昵称即可。</p><p>但是多填点不香吗？</p><blockquote><p><del>咕咕咕</del> To be continued.</p></blockquote><p><img src="/img/gugugu.gif" /></p>]]></content>
     
     
     <categories>
@@ -308,33 +237,6 @@
       <tag>maths</tag>
       
       <tag>sqrt</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>hexo搭建指南</title>
-    <link href="/howtohexo/"/>
-    <url>/howtohexo/</url>
-    
-    <content type="html"><![CDATA[<p>本来还想录个视频的，但是现在显然连教程都懒得写。</p><span id="more"></span><h2 id="参考资料">参考资料</h2><p>具体内容以后再说，我先把我搭建过程中碰到的所有问题时查询的博客全部列在这里，基本上覆盖了所有可能遇到的问题（？）</p><ul><li>https://blog.csdn.net/sinat_37781304/article/details/82729029</li><li>https://hexo.fluid-dev.com/docs/guide/#%E5%8D%9A%E5%AE%A2%E6%A0%87%E9%A2%98</li><li>https://blog.csdn.net/qq_36759224/article/details/86546729</li><li>https://zhuanlan.zhihu.com/p/115535965（如何免费弄个人域名，需要科学上网）</li><li>https://hexo.fluid-dev.com/posts/fluid-footer-custom/（官方博客，里面有许多fancy 的功能，供有基础的同学们探索）</li><li>https://www.jianshu.com/p/6e41e3191963 音乐</li></ul><p>不过github本身就需要科学上网才能得到较稳定的体验。</p><p>另外在config里deploy时可以用ssh或http，http上传必须要翻墙，ssh上传感觉非常迷惑，有时候要翻墙，有时候不能翻。</p><figure><img src="/img/ssh.png" alt="a joke" /><figcaption aria-hidden="true">a joke</figcaption></figure>]]></content>
-    
-    
-    <categories>
-      
-      <category>entertainment</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>deploy</tag>
-      
-      <tag>blog</tag>
       
     </tags>
     

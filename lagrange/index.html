@@ -27,7 +27,7 @@
 <meta property="og:image" content="http://shmilyty.cf/img/gugugu.gif">
 <meta property="og:image" content="http://shmilyty.cf/img/gugugu.gif">
 <meta property="article:published_time" content="2022-03-16T15:26:46.000Z">
-<meta property="article:modified_time" content="2022-03-22T06:09:13.098Z">
+<meta property="article:modified_time" content="2022-07-26T15:12:33.708Z">
 <meta property="article:author" content="ShmilyTY">
 <meta property="article:tag" content="maths">
 <meta property="article:tag" content="poly">
@@ -571,16 +571,6 @@ class="math inline">\(\log_k\)</span>。</p>
 <span class="category-chains">
   
   
-    
-      <span class="category-chain">
-        
-  <a href="/categories/entertainment/" class="category-chain-item">entertainment</a>
-  
-  
-
-      </span>
-    
-  
 </span>
 
     </div>
@@ -641,29 +631,6 @@ class="math inline">\(\log_k\)</span>。</p>
 
 
 
-              
-                <div class="post-prevnext my-3">
-                  <article class="post-prev col-6">
-                    
-                    
-                      <a href="/capoo/" title="capoo">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">capoo</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                      <a href="/something/" title="Introductions(?)">
-                        <span class="hidden-mobile">Introductions(?)</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </article>
-                </div>
               
             </div>
 
@@ -740,6 +707,12 @@ class="math inline">\(\log_k\)</span>。</p>
 
 
   
+
+
+  
+  
+
+
 
 
 
@@ -906,6 +879,40 @@ class="math inline">\(\log_k\)</span>。</p>
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.1/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 
