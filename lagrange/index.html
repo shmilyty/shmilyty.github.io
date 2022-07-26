@@ -16,21 +16,27 @@
   <meta name="author" content="ShmilyTY">
   <meta name="keywords" content="">
   
-    <meta name="description" content="123123123123 Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask">
+    <meta name="description" content="最近虽然有一车子事情，但是还是感觉很空虚，所以写点东西来颓废一下。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://shmilyty.cf/hello-world/index.html">
+<meta property="og:title" content="拉格朗日插值浅谈">
+<meta property="og:url" content="http://shmilyty.cf/lagrange/index.html">
 <meta property="og:site_name" content="¡Hola!">
-<meta property="og:description" content="123123123123 Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask">
+<meta property="og:description" content="最近虽然有一车子事情，但是还是感觉很空虚，所以写点东西来颓废一下。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-07-05T15:20:46.000Z">
-<meta property="article:modified_time" content="2022-03-15T10:48:06.153Z">
+<meta property="og:image" content="http://shmilyty.cf/img/gugugu.gif">
+<meta property="og:image" content="http://shmilyty.cf/img/gugugu.gif">
+<meta property="og:image" content="http://shmilyty.cf/img/gugugu.gif">
+<meta property="article:published_time" content="2022-03-16T15:26:46.000Z">
+<meta property="article:modified_time" content="2022-03-22T06:09:13.098Z">
 <meta property="article:author" content="ShmilyTY">
+<meta property="article:tag" content="maths">
+<meta property="article:tag" content="poly">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://shmilyty.cf/img/gugugu.gif">
   
   
   
-  <title>Hello World - ¡Hola!</title>
+  <title>拉格朗日插值浅谈 - ¡Hola!</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -142,7 +148,7 @@
   <header>
     
 
-<div class="header-inner" style="height: 70vh;">
+<div class="header-inner" style="height: 100vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -317,13 +323,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/study.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Hello World"></span>
+            <span id="subtitle" data-typed-text="拉格朗日插值浅谈"></span>
           
         </div>
 
@@ -334,8 +340,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-07-05 23:20" pubdate>
-          2022年7月5日 晚上
+        <time datetime="2022-03-16 23:26" pubdate>
+          2022年3月16日 晚上
         </time>
       </span>
     
@@ -346,7 +352,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          379 字
+          2.4k 字
         
       </span>
     
@@ -357,7 +363,7 @@
         
         
         
-          4 分钟
+          21 分钟
         
       </span>
     
@@ -370,6 +376,10 @@
         
       </div>
 
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
       
     </div>
   </div>
@@ -395,36 +405,157 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Hello World</h1>
+            <h1 style="display: none">拉格朗日插值浅谈</h1>
             
             
               <div class="markdown-body">
                 
-                <span id="more"></span>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs">123<br>123<br>123<br></code></pre></td></tr></table></figure>
-<p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very
-first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for
-more info. If you get any problems when using Hexo, you can find the
-answer in <a
-target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
-you can ask me on <a
-target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
-<p>More info: <a
-target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
-<p>More info: <a
-target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
-<p>More info: <a
-target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+                <p>最近虽然有一车子事情，但是还是感觉很空虚，所以写点东西来颓废一下。</p>
+<span id="more"></span>
+<blockquote>
+<p><span class="math inline">\(1+2+\dots+n=\frac {n\times (n+1)}
+2\)</span></p>
+<p><span class="math inline">\(1^2+2^2+\dots+n^2=\frac
+{n\times(n+1)\times(2n+1)} 2\)</span></p>
+<p><span class="math inline">\(1^3+2^3+\dots+n^3=\frac{n^2\times(n+1)^2}
+4\)</span></p>
+<p><span class="math inline">\(\cdots\)</span></p>
+<p>如何快速计算 <span class="math inline">\(1^k+2^k+\dots
++n^k\)</span>​？​</p>
+</blockquote>
+<p>介绍一个神奇的东西：拉格朗日插值法。</p>
+<p>咳咳，收起你头脑中奇怪的联想。</p>
+<hr />
+<h1 id="概述和证明">概述和证明</h1>
+<blockquote>
+<p>前置知识：初中数学</p>
+</blockquote>
+<p>众所周知，给定平面上两个 <span class="math inline">\(x\)</span>
+值不同的点，可以确定一条直线（一次函数）；</p>
+<p>给定三个 <span class="math inline">\(x\)</span>
+值不同的点，可以确定一个二次函数。</p>
+<p>大胆的猜想一下，给定 <span class="math inline">\(n+1\)</span> 个
+<span class="math inline">\(x\)</span> 值不同的点，可以确定一个 <span
+class="math inline">\(n\)</span>​ 次函数，事实上的确如此。</p>
+<p>给你一个函数，要你带入 <span class="math inline">\(x\)</span>​
+求值非常简单，但是给定 <span class="math inline">\(n+1\)</span>​
+个点，要求还原原本的 <span class="math inline">\(n\)</span>​
+次函数并非容易事。你无非就两种选择：</p>
+<p><strong>选择</strong>Ⅰ：我会代入！</p>
+<p>求解一个 <span class="math inline">\(n+1\)</span>​ 元一次方程组。</p>
+<p><strong>选择</strong>Ⅱ：我会用知乎！</p>
+<p><a
+target="_blank" rel="noopener" href="https://www.zhihu.com/search?type=content&amp;q=%E6%B1%82k%E6%AC%A1%E6%96%B9%E5%92%8C">一头雾水。jpg</a></p>
+<p><strong>选择</strong>Ⅲ：我会推公式！</p>
+<p>普通人和拉格朗日的区别在于普通人只满足于已有的做法，而拉格朗日却探索出了一种性能更高，更方便的做法：其中需要借助的核心公式被命名为拉格朗日插值公式。</p>
+<p>一般的介绍到这里就基本上完结撒花了：先写出那个看似复杂的公式，然后来一句“至于怎么证我也不会”。而我打算使用四种完全不同的角度证明这个公式。（虽然目前只弄懂了其中的一种）</p>
+<p><strong>每一段都标注了前置知识，如果不会而且对这个不感兴趣的可以直接跳过，如果不会但感兴趣的可以自己去钻研一下。</strong></p>
+<h2 id="从多项式的角度">1. 从多项式的角度</h2>
+<blockquote>
+<p>前置知识：初中数学</p>
+<p>需要注意的是，此时定义 <span class="math inline">\(n\)</span>
+次函数是未化简之前的最高次，比如认为 <span
+class="math inline">\(0x^2-x\)</span> 是二次函数。</p>
+</blockquote>
+<p>思路：先证明假如存在一个<strong>唯一</strong>的 <span
+class="math inline">\(n\)</span>​ 次函数 <span
+class="math inline">\(f(x)\)</span>​，该函数经过给定的 <span
+class="math inline">\(n+1\)</span>​ 个点 <span
+class="math inline">\((a_1,b_1)\dots(a_{n+1},b_{n+1})\)</span>​，那么这个函数唯一，再用你聪明的大脑构造出一个函数即可。</p>
+<p>反证法：假设存在两个<strong>不同的</strong> <span
+class="math inline">\(n\)</span> 次函数 <span
+class="math inline">\(f(x),g(x)\)</span>，使得这两个函数同时经过给定的
+<span class="math inline">\(n+1\)</span>​ 个点。</p>
+<p>设 <span class="math inline">\(p(x)=f(x)-g(x)\)</span>​，那么 <span
+class="math inline">\(p(x)\)</span>​ 也是一个 <span
+class="math inline">\(n\)</span>​ 次函数，而且当 <span
+class="math inline">\(x=a_1,a_2,\dots,a_{n+1}\)</span> 时，<span
+class="math inline">\(p(x)=0\)</span>。</p>
+<p>但是一波冷静分析后发现，一个 <span class="math inline">\(n\)</span>
+次函数怎么会和 <span class="math inline">\(x\)</span> 轴有 <span
+class="math inline">\(n+1\)</span> 个交点呢？只有一种可能：<span
+class="math inline">\(p(x)=0\)</span>，即 <span
+class="math inline">\(f(x)=g(x)\)</span>，矛盾。</p>
+<p>第一步结束后，只需要构造出一个 <span class="math inline">\(n\)</span>
+次函数，使其经过这 <span class="math inline">\(n+1\)</span>
+个点就可以了。这看上去还是很不可做，所以先退一步思考，假如有辅助函数
+<span
+class="math inline">\(F_1(x),F_2(x),\dots,F_{n+1}(x)\)</span>，而且满足如下特点：</p>
+<p><span class="math display">\[
+F_i(x)=\begin{cases}1\space x=a_i\\0\space otherwise\end{cases}
+\]</span></p>
+<p>那么就可以写出 <span class="math inline">\(f(x)\)</span> 了： <span
+class="math inline">\(f(x)=F_1(x)\times b_1+F_2(x)\times
+b_2+\dots+F_{n+1}(x)\times b_{n+1}\)</span></p>
+<p>至于 <span class="math inline">\(F_i\)</span> 如何构造也不难：</p>
+<p><span class="math display">\[
+F_i(x)=\frac {x-a_1} {a_i-a_1}\times \frac {x-a_2} {a_i-a_2}\times
+\dots\times \frac {x-a_{i-1}} {a_i-a_{i-1}}\times \frac {x-a_{i+1}}
+{a_i-a_{i+1}}\times\dots\times \frac {x-a_n} {a_i-a_n}
+\]</span></p>
+<p>可以自行检验一下，当 <span class="math inline">\(x=a_i\)</span>
+时，所有项都是 <span class="math inline">\(1\)</span>。当 <span
+class="math inline">\(x=a_l(l\neq i)\)</span>​ 时，必然有一项的值为 <span
+class="math inline">\(0\)</span>，所以结果就是 <span
+class="math inline">\(0\)</span>。</p>
+<p>那么最后的公式完整地写出来就是：</p>
+<p><span class="math display">\[
+f(x)=\sum_{i=1}^{n+1}b_i\prod_{l\neq i}\frac {x-a_l} {a_i-a_l}
+\]</span></p>
+<p>被称为<strong>Lagrange 插值公式</strong>。</p>
+<h2 id="中国剩余定理">2. 中国剩余定理</h2>
+<blockquote>
+<p>咕咕咕</p>
+</blockquote>
+<p><img src="/img/gugugu.gif" srcset="/img/loading.gif" lazyload /></p>
+<h2 id="cramer-法则">3. Cramer 法则</h2>
+<blockquote>
+<p>咕咕咕</p>
+</blockquote>
+<p><img src="/img/gugugu.gif" srcset="/img/loading.gif" lazyload /></p>
+<h2 id="向量空间">4. 向量空间</h2>
+<blockquote>
+<p>咕咕咕</p>
+</blockquote>
+<p><img src="/img/gugugu.gif" srcset="/img/loading.gif" lazyload /></p>
+<h1 id="应用">应用</h1>
+<p>回到一开始提出的问题：求 <span
+class="math inline">\(\sum_{i=1}^ni^k\)</span>​ 。</p>
+<p>如果直接计算，即对于每个数单独计算并加起来，时间复杂度（可以理解为运算量）是
+<span class="math inline">\(O(n\log k)\)</span>​
+的。但是根据常识（包括一开始的给出的公式），可以发现这可以写成一个 <span
+class="math inline">\(n\)</span>​ 为未知数的 <span
+class="math inline">\(k+1\)</span>​ 次多项式 <span
+class="math inline">\(f(x)\)</span>​​，虽然我们并不知道它具体是是什么，也不在乎。</p>
+<p>现在要求的值其实就是 <span class="math inline">\(f(n)\)</span>​​
+的值，为了求这个值，我们只需要找到 <span
+class="math inline">\(f(x)\)</span>​​ 经过的 <span
+class="math inline">\(k+2\)</span>​​​
+个点，然后利用拉格朗日插值公式就可以了，只要是正常人取的这 <span
+class="math inline">\(k+2\)</span> 个点都应该是 <span
+class="math inline">\(a_i=i\)</span> 时的结果，因为这样对应的 <span
+class="math inline">\(b_i\)</span> 比较好求。</p>
+<p>此时总运算量为 <span class="math inline">\(O(k^2)\)</span>​ 的，与
+<span class="math inline">\(n\)</span>​ 无关，也就是说 <span
+class="math inline">\(n\)</span>​
+可以取很大的值，这也是为什么拉格朗日插值有时可以用于优化某一维较大的
+dp。</p>
+<h2 id="一些优化">一些优化</h2>
+<p><a
+target="_blank" rel="noopener" href="http://codeforces.com/problemset/problem/622/F">CF622F</a></p>
+<p>这一题也算的上是一道名题了，就是我上面的例题。但是我们可以用在本题中使用
+<span class="math inline">\(O(k)\)</span> 的时间复杂度完成插值。</p>
+<p>首先特判 <span class="math inline">\(n\le k+2\)</span>
+的情况，因为这些点已经被预处理出来了。</p>
+<p>由于 <span
+class="math inline">\(a_i=i\)</span>，那么现在将原公式变形可得：</p>
+<p><span class="math display">\[
+f(n)=\sum_{i=1}^{k+2}b_i \frac {\prod_{l=1}^{k+2}(n-l)}
+{(n-i)(i-1)!(i-(k+2))!}
+\]</span></p>
+<p>这显然可以在 <span class="math inline">\(O(k)\)</span>
+的时间内被计算出来，当然，预处理的复杂度会多一个 <span
+class="math inline">\(\log_k\)</span>。</p>
 
                 
               </div>
@@ -433,6 +564,36 @@ target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/entertainment/" class="category-chain-item">entertainment</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/maths/">#maths</a>
+      
+        <a href="/tags/poly/">#poly</a>
+      
+    </div>
   
 </div>
 
@@ -442,8 +603,8 @@ target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Hello World</div>
-      <div>http://shmilyty.cf/hello-world/</div>
+      <div>拉格朗日插值浅谈</div>
+      <div>http://shmilyty.cf/lagrange/</div>
     </div>
     <div class="license-meta">
       
@@ -455,7 +616,7 @@ target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年7月5日</div>
+          <div>2022年3月16日</div>
         </div>
       
       
@@ -480,6 +641,29 @@ target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment
 
 
 
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/capoo/" title="capoo">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">capoo</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/something/" title="Introductions(?)">
+                        <span class="hidden-mobile">Introductions(?)</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
               
             </div>
 

@@ -16,21 +16,33 @@
   <meta name="author" content="ShmilyTY">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="website">
-<meta property="og:title" content="分类">
-<meta property="og:url" content="http://shmilyty.cf/categories/index.html">
+    <meta name="description" content="CF1634F">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CF1634F Fibonacci Additions">
+<meta property="og:url" content="http://shmilyty.cf/cf1634f/index.html">
 <meta property="og:site_name" content="¡Hola!">
+<meta property="og:description" content="CF1634F">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-03-15T12:12:56.000Z">
+<meta property="article:modified_time" content="2022-03-16T05:19:34.122Z">
 <meta property="article:author" content="ShmilyTY">
+<meta property="article:tag" content="codeforces">
+<meta property="article:tag" content="ds">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>分类 - ¡Hola!</title>
+  <title>CF1634F Fibonacci Additions - ¡Hola!</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
 
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
 
 
 
@@ -132,7 +144,7 @@
   <header>
     
 
-<div class="header-inner" style="height: 60vh;">
+<div class="header-inner" style="height: 100vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -307,19 +319,63 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('https://w.wallhaven.cc/full/z8/wallhaven-z8dg9y.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="分类"></span>
+            <span id="subtitle" data-typed-text="CF1634F Fibonacci Additions"></span>
           
         </div>
 
         
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-03-15 20:12" pubdate>
+          2022年3月15日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          766 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          7 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
       </div>
 
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
       
     </div>
   </div>
@@ -331,246 +387,258 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">CF1634F Fibonacci Additions</h1>
+            
+            
+              <div class="markdown-body">
                 
+                <p><a
+target="_blank" rel="noopener" href="https://codeforces.com/contest/1634/problem/F">CF1634F</a></p>
+<span id="more"></span>
+<hr />
+<p>给定 <span class="math inline">\(n\)</span>​ 个数 <span
+class="math inline">\(a\)</span>，每次可以选择一个区间，将区间对位加上（或减去）
+Fib 数列。（区间第一个数加（或减） <span
+class="math inline">\(1\)</span>，第二个数加（或减） <span
+class="math inline">\(1\)</span>，第三个数加（或减） <span
+class="math inline">\(2\dots\)</span>​​）</p>
+<p>你要在每次操作后回答询问：所有数是否都是 <span
+class="math inline">\(MOD\)</span> 的倍数。</p>
+<p><span class="math inline">\(n,q\le 3\times 10^5\)</span></p>
+<hr />
+<p>先从这个题目本身进行考虑，假如区间对位加上的数是毫无规律的，那么就不存在一个低于
+<span class="math inline">\(O(nq)\)</span>​
+的做法，由于给定的数据范围无法接受，存在的这个限制（Fib）就尤为重要了。</p>
+<p>我当时场上写了一个线段树，但是由于这个线段树的常数略大，所以 TLE on
+pretest 9。</p>
+<p>但如果从其他角度更好的利用 Fib 这个限制，可以得到一个线性做法。</p>
+<p>一个区间操作的经典题：当区间加上的数全部相同时，令 <span
+class="math inline">\(f_i=a_i-a_{i-1}\)</span>​，那么当 <span
+class="math inline">\(a_i\)</span>​ 和 <span
+class="math inline">\(a_{i-1}\)</span>​ 同时加上一个相同的数时，<span
+class="math inline">\(f_i\)</span>​​
+保持不变，换句话说，两个相邻的数同时或同时不在操作区间内时，差分结果是不变的，差分之所以每次修改时只需要修改区间边缘的差分值。<strong>差分算法的核心在于将原数列映射成另一个序列，使得单次修改的复杂度为</strong>
+<span class="math inline">\(O(1)\)</span>​。</p>
+<p>同理，在这个问题中，令 <span
+class="math inline">\(f_i=a_i-a_{i-1}-a_{i-2}\)</span>，那么由于每次操作相邻的三个数的增量
+<span class="math inline">\(c\)</span> 满足 <span
+class="math inline">\(c_i=c_{i-1}+c_{i-2}\)</span>，三个相邻的数同时或同时不在操作区间内时，对应的
+<span class="math inline">\(f\)</span> 是不变的。</p>
+<p>由于 <span class="math inline">\(a\)</span> 和 <span
+class="math inline">\(f\)</span> 存在映射，因此所有 <span
+class="math inline">\(a\)</span> 都是 <span
+class="math inline">\(MOD\)</span>​ 的倍数等价于 <span
+class="math inline">\(f\)</span> 在模意义下全是 <span
+class="math inline">\(0\)</span>，记录 <span
+class="math inline">\(f\)</span> 当前有多少个数非 <span
+class="math inline">\(0\)</span>​ ，每次修改时更新即可。</p>
+<p>时间复杂度： <span class="math inline">\(O(n+q)\)</span></p>
+<p>这一题使我对差分有了一个更深的认识。</p>
 
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
 
-
-
-
-<div class="category-list">
+<span class="category-chains">
   
   
     
-    
-    
-    <div class="category row nomargin-x">
-      <a class="category-item collapsed
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="editorial"
-        id="heading-c38a65d6da58fca07d994da3a11d477b" role="tab" data-toggle="collapse" href="#collapse-c38a65d6da58fca07d994da3a11d477b"
-        aria-expanded="false"
-      >
-        editorial
-        <span class="list-group-count"></span>
-        <i class="iconfont icon-arrowright"></i>
-      </a>
-      
-        <a href="/categories/editorial/" class="category-count col-2 col-md-1 col-xm-1">
-          <i class="iconfont icon-articles"></i>
-          <span>8</span>
-        </a>
-      
-      <div class="category-collapse collapse " id="collapse-c38a65d6da58fca07d994da3a11d477b"
-           role="tabpanel" aria-labelledby="heading-c38a65d6da58fca07d994da3a11d477b">
+      <span class="category-chain">
         
-        
-          
-  <div class="category-post-list">
-    
-    
-      
-      
-        <a href="/abc260h/" title="ABC260Ex Colorfulness"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">ABC260Ex Colorfulness</span>
-        </a>
-      
-    
-      
-      
-        <a href="/haltoj226/" title="Haltoj#226. [220705] Tile"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">Haltoj#226. [220705] Tile</span>
-        </a>
-      
-    
-      
-      
-        <a href="/poj2079/" title="POJ2079 Triangle"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">POJ2079 Triangle</span>
-        </a>
-      
-    
-      
-      
-        <a href="/agc031e/" title="AGC031E Snuke the Phantom Thief"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">AGC031E Snuke the Phantom Thief</span>
-        </a>
-      
-    
-      
-      
-        <a href="/loj2026/" title="Loj2026 「JLOI / SHOI2016」成绩比较"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">Loj2026 「JLOI / SHOI2016」成绩比较</span>
-        </a>
-      
-    
-      
-      
-        <a href="/gym103069a/" title="GYM103069A Namomo Subsequence"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">GYM103069A Namomo Subsequence</span>
-        </a>
-      
-    
-      
-      
-        <a href="/cf1634f/" title="CF1634F Fibonacci Additions"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">CF1634F Fibonacci Additions</span>
-        </a>
-      
-    
-      
-      
-        <a href="/arc112f/" title="ARC112F Die Siedler"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">ARC112F Die Siedler</span>
-        </a>
-      
-    
-  </div>
+  <a href="/categories/editorial/" class="category-chain-item">editorial</a>
+  
+  
 
-        
-      </div>
+      </span>
+    
+  
+</span>
+
     </div>
   
-    
-    
-    
-    <div class="category row nomargin-x">
-      <a class="category-item collapsed
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="entertainment"
-        id="heading-f375dbeedcce5e6b40c0720a5b26d3e5" role="tab" data-toggle="collapse" href="#collapse-f375dbeedcce5e6b40c0720a5b26d3e5"
-        aria-expanded="false"
-      >
-        entertainment
-        <span class="list-group-count"></span>
-        <i class="iconfont icon-arrowright"></i>
-      </a>
-      
-        <a href="/categories/entertainment/" class="category-count col-2 col-md-1 col-xm-1">
-          <i class="iconfont icon-articles"></i>
-          <span>4</span>
-        </a>
-      
-      <div class="category-collapse collapse " id="collapse-f375dbeedcce5e6b40c0720a5b26d3e5"
-           role="tabpanel" aria-labelledby="heading-f375dbeedcce5e6b40c0720a5b26d3e5">
-        
-        
-          
-  <div class="category-post-list">
-    
-    
-      
-      
-        <a href="/bot/" title="关于QQ机器人"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">关于QQ机器人</span>
-        </a>
-      
-    
-      
-      
-        <a href="/capoo/" title="capoo"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">capoo</span>
-        </a>
-      
-    
-      
-      
-        <a href="/lagrange/" title="拉格朗日插值浅谈"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">拉格朗日插值浅谈</span>
-        </a>
-      
-    
-      
-      
-        <a href="/howtohexo/" title="hexo搭建指南"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">hexo搭建指南</span>
-        </a>
-      
-    
-  </div>
-
-        
-      </div>
-    </div>
   
-    
-    
-    
-    <div class="category row nomargin-x">
-      <a class="category-item collapsed
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="introduction"
-        id="heading-8800e1c9b3e22c44ba59a34db3fe4841" role="tab" data-toggle="collapse" href="#collapse-8800e1c9b3e22c44ba59a34db3fe4841"
-        aria-expanded="false"
-      >
-        introduction
-        <span class="list-group-count"></span>
-        <i class="iconfont icon-arrowright"></i>
-      </a>
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
       
-        <a href="/categories/introduction/" class="category-count col-2 col-md-1 col-xm-1">
-          <i class="iconfont icon-articles"></i>
-          <span>1</span>
-        </a>
+        <a href="/tags/codeforces/">#codeforces</a>
       
-      <div class="category-collapse collapse " id="collapse-8800e1c9b3e22c44ba59a34db3fe4841"
-           role="tabpanel" aria-labelledby="heading-8800e1c9b3e22c44ba59a34db3fe4841">
-        
-        
-          
-  <div class="category-post-list">
-    
-    
+        <a href="/tags/ds/">#ds</a>
       
-      
-        <a href="/something/" title="Introductions(?)"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">Introductions(?)</span>
-        </a>
-      
-    
-  </div>
-
-        
-      </div>
     </div>
   
 </div>
 
 
-              </div>
-            </div>
-          </div>
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>CF1634F Fibonacci Additions</div>
+      <div>http://shmilyty.cf/cf1634f/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>ShmilyTY</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年3月15日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
         </div>
       </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/gym103069a/" title="GYM103069A Namomo Subsequence">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">GYM103069A Namomo Subsequence</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/arc112f/" title="ARC112F Die Siedler">
+                        <span class="hidden-mobile">ARC112F Die Siedler</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  <article id="comments" lazyload>
+    
+  <div id="waline"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createCssLink('https://lib.baomitu.com/waline/2.5.1/waline.min.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/waline/2.5.1/waline.min.js', function() {
+        var options = Object.assign(
+          {"serverURL":"https://blog-4nryrmlyy-shmilyty.vercel.app/","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":null,"emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":10,"enable":true,"placeholder":"Just go go","avatar":"mm","visitor":false,"comment_count":true,"requiredFields":[],"libUrl":null},
+          {
+            el: '#waline',
+            path: window.location.pathname
+          }
+        )
+        Waline.init(options);
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          var imgSelector = '#waline .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+  </article>
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
     
 
     
@@ -664,6 +732,72 @@
 
 
 
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
 
   <script  src="/js/local-search.js" ></script>
 
