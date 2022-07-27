@@ -24,7 +24,7 @@
 <meta property="og:description" content="ABC260H">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-07-21T15:08:49.000Z">
-<meta property="article:modified_time" content="2022-07-26T15:07:33.928Z">
+<meta property="article:modified_time" content="2022-07-27T03:27:45.900Z">
 <meta property="article:author" content="ShmilyTY">
 <meta property="article:tag" content="atcoder">
 <meta property="article:tag" content="maths">
@@ -348,7 +348,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.2k 字
+          3.3k 字
         
       </span>
     
@@ -359,7 +359,7 @@
         
         
         
-          27 分钟
+          28 分钟
         
       </span>
     
@@ -543,7 +543,7 @@ f^{-1}(x)=2f_0^{-1}(x)-(f_0^{-1}(x))^2f(x)
 <p>看了一下别人的代码，发现可以在最后求 <span
 class="math inline">\(f^{-1}(x)\)</span> 时候将 <span
 class="math inline">\(f_0^{-1}(x),f(x)\)</span>
-先化为点值形式去做运输，最后再 DFT
+先化为点值形式去做运算，最后再 DFT
 回来，而不是在每次都做多项式乘法。这样可以减少一半的常数。</p>
 <p>此外我在实现的时候还发现一个问题，初始的多项式 <span
 class="math inline">\(x\)</span> 长度是 <span
@@ -552,6 +552,10 @@ class="math inline">\(O(m)\)</span>
 <span class="math inline">\(f^{-1}(x)\)</span> 时只保留前 <span
 class="math inline">\(k\)</span>
 项，我一开始没有很好地处理这个问题，导致一直无法通过较大的数据。</p>
+<hr />
+<p>经过一段时间的学习后发现，如果用迭代的方式代替递归，效率可以得到更进一步的优化！</p>
+<p>放上我最后的实现（洛谷 P4238）</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><br></code></pre></td></tr></table></figure>
 <hr />
 <p>总结：这一题运用到了很多多项式的知识，比如生成函数，虽然以前学过，但是从来都没有在做题的时候排上用场，通过这一题对推导过程，实现的细节都加深了认识。</p>
 
@@ -662,24 +666,19 @@ class="math inline">\(k\)</span>
             
   <article id="comments" lazyload>
     
-  <div id="waline"></div>
+  <div id="gitalk-container"></div>
   <script type="text/javascript">
-    Fluid.utils.loadComments('#waline', function() {
-      Fluid.utils.createCssLink('https://lib.baomitu.com/waline/2.5.1/waline.min.css')
-      Fluid.utils.createScript('https://lib.baomitu.com/waline/2.5.1/waline.min.js', function() {
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.7.2/gitalk.min.js', function() {
         var options = Object.assign(
-          {"serverURL":"https://blog-4nryrmlyy-shmilyty.vercel.app/","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":null,"emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":10,"enable":true,"placeholder":"Just go go","avatar":"mm","visitor":false,"comment_count":true,"requiredFields":[],"libUrl":null},
+          {"clientID":"5e4c08f733e7fc45d1f2","clientSecret":"f7a40b0a40ddef3b2b2e63c35fe93be9bafedf4b","repo":"shmilyty.github.io","owner":"shmilyty","admin":"shmilyty","language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","enable":true},
           {
-            el: '#waline',
-            path: window.location.pathname
+            id: 'b0176681ed8acfb288910bf3f7add2f7'
           }
         )
-        Waline.init(options);
-        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
-          var imgSelector = '#waline .vcontent img:not(.vemoji)';
-          Fluid.plugins.imageCaption(imgSelector);
-          Fluid.plugins.fancyBox(imgSelector);
-        })
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
       });
     });
   </script>

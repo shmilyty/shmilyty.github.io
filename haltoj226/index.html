@@ -528,24 +528,19 @@
             
   <article id="comments" lazyload>
     
-  <div id="waline"></div>
+  <div id="gitalk-container"></div>
   <script type="text/javascript">
-    Fluid.utils.loadComments('#waline', function() {
-      Fluid.utils.createCssLink('https://lib.baomitu.com/waline/2.5.1/waline.min.css')
-      Fluid.utils.createScript('https://lib.baomitu.com/waline/2.5.1/waline.min.js', function() {
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.7.2/gitalk.min.js', function() {
         var options = Object.assign(
-          {"serverURL":"https://blog-4nryrmlyy-shmilyty.vercel.app/","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":null,"emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":10,"enable":true,"placeholder":"Just go go","avatar":"mm","visitor":false,"comment_count":true,"requiredFields":[],"libUrl":null},
+          {"clientID":"5e4c08f733e7fc45d1f2","clientSecret":"f7a40b0a40ddef3b2b2e63c35fe93be9bafedf4b","repo":"shmilyty.github.io","owner":"shmilyty","admin":"shmilyty","language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","enable":true},
           {
-            el: '#waline',
-            path: window.location.pathname
+            id: '6eb74832b8a92b0053deb434686a4d28'
           }
         )
-        Waline.init(options);
-        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
-          var imgSelector = '#waline .vcontent img:not(.vemoji)';
-          Fluid.plugins.imageCaption(imgSelector);
-          Fluid.plugins.fancyBox(imgSelector);
-        })
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
       });
     });
   </script>
