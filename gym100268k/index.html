@@ -16,24 +16,24 @@
   <meta name="author" content="ShmilyTY">
   <meta name="keywords" content="">
   
-    <meta name="description" content="GYM103069A">
+    <meta name="description" content="GYM100268k 如你所见，这是一道 Google Code Jam World Finals 2019 的压轴（大概是吧）题。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="GYM103069A Namomo Subsequence">
-<meta property="og:url" content="http://shmilyty.cf/gym103069a/index.html">
+<meta property="og:title" content="gym100268k">
+<meta property="og:url" content="http://shmilyty.cf/gym100268k/index.html">
 <meta property="og:site_name" content="¡Hola!">
-<meta property="og:description" content="GYM103069A">
+<meta property="og:description" content="GYM100268k 如你所见，这是一道 Google Code Jam World Finals 2019 的压轴（大概是吧）题。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-03-16T05:18:02.000Z">
-<meta property="article:modified_time" content="2022-07-26T15:08:29.893Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/shmilyty/img/main/data/202207272155403.png">
+<meta property="article:published_time" content="2022-07-27T12:46:25.000Z">
+<meta property="article:modified_time" content="2022-07-27T14:13:57.724Z">
 <meta property="article:author" content="ShmilyTY">
-<meta property="article:tag" content="codeforces">
 <meta property="article:tag" content="dp">
-<meta property="article:tag" content="cf gym">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/shmilyty/img/main/data/202207272155403.png">
   
   
   
-  <title>GYM103069A Namomo Subsequence - ¡Hola!</title>
+  <title>gym100268k - ¡Hola!</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -326,7 +326,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="GYM103069A Namomo Subsequence"></span>
+            <span id="subtitle" data-typed-text="gym100268k"></span>
           
         </div>
 
@@ -337,8 +337,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-03-16 13:18" pubdate>
-          2022年3月16日 下午
+        <time datetime="2022-07-27 20:46" pubdate>
+          2022年7月27日 晚上
         </time>
       </span>
     
@@ -349,7 +349,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.9k 字
+          1.6k 字
         
       </span>
     
@@ -360,7 +360,7 @@
         
         
         
-          16 分钟
+          14 分钟
         
       </span>
     
@@ -402,78 +402,57 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">GYM103069A Namomo Subsequence</h1>
+            <h1 style="display: none">gym100268k</h1>
             
             
               <div class="markdown-body">
                 
-                <p><a
-target="_blank" rel="noopener" href="https://codeforces.com/gym/103069/problem/A">GYM103069A</a></p>
+                <p><a target="_blank" rel="noopener" href="https://codeforces.com/gym/100268">GYM100268k</a></p>
+<p>如你所见，这是一道 Google Code Jam World Finals 2019
+的压轴（大概是吧）题。</p>
 <span id="more"></span>
+<p><a
+target="_blank" rel="noopener" href="https://codingcompetitions.withgoogle.com/codejam/round/0000000000432ad5">原题链接</a></p>
+<p>你大概需要一个 Google 账号才能在官方网站上交题。</p>
 <hr />
-<p>求 <span class="math inline">\(S\)</span> 中有多少个长度为 <span
-class="math inline">\(6\)</span>
-的子序列，第三个和第五个字符相同，第四个和第六个字符相同，其他字符互不相同，即形如
-<code>ABCDCD</code> 。</p>
-<p><span class="math inline">\(S\le 10^6\)</span> ，字符集 <span
-class="math inline">\(m\)</span> 大小为 <span
-class="math inline">\(62\)</span>。</p>
+<p>有一天，cftm
+一直在各种群里喊：“妈的，这傻逼题怎么一直挂啊！”其实我当时还有很多题可以补，但是我觉得这个题非常的有趣，所以就先补了一下这道题。</p>
+<p>给定一个 <span class="math inline">\(n\times m\)</span>
+的格子，每个格子里要填一个小写字母，已经填好了一部分，要求将剩下的部分填满，并且满足每一个格子的字母的字典序都<strong>不小于</strong>其右边和上面的相邻格子字母的字典序。求有多少种填法，对
+<span class="math inline">\(10007\)</span> 取模。</p>
+<p><span class="math inline">\(1\le n,m\le 10\)</span>。</p>
 <hr />
-<p>可以想到这种计数题，十有八九需要利用到
-dp，可以先枚举第三个字符的位置，分别计算前后的个数，显然可以令 <span
-class="math inline">\(f(i,c1,c2)\)</span> 表示长度为 <span
-class="math inline">\(i\)</span> 的前缀中，子序列 <span
-class="math inline">\((c1,c2)\)</span>
-的个数，后缀同理。但这样的状态数为 <span
-class="math inline">\(O(nm^2)\)</span>，无法通过。</p>
-<p>先去找优化的方向，假如只能提供 <span
-class="math inline">\(O(nm)\)</span>
-的运算量，必然是枚举第三个字符的位置和 <span
-class="math inline">\(D\)</span> 是什么字符，那么具体的方案就需要 <span
-class="math inline">\(O(nm)\)</span> 预处理，<span
-class="math inline">\(O(1)\)</span> 得到。</p>
-<p>先枚举第三个字符的位置，对于前面 <code>AB</code> 的数量，<span
-class="math inline">\(O(m)\)</span> 统计前面有多少个对 <span
-class="math inline">\((c1,c2)\)</span> 使得不等于第三个字符，这样在枚举
-<code>D</code> 是什么字符时可以直接 <span
-class="math inline">\(O(1)\)</span> 得到。</p>
-<p>对于后面的部分，需要从后往前进行 dp。</p>
-<ul>
-<li><p>令 <span class="math inline">\(f(i,c1,c2,0)\)</span> 表示从 <span
-class="math inline">\(i\)</span> 开始的后缀中，有多少个 <span
-class="math inline">\((c1,c2)\)</span>。</p></li>
-<li><p>令 <span class="math inline">\(f(i,c1,c2,1)\)</span> 表示从 <span
-class="math inline">\(i\)</span> 开始的后缀中，有多少个 <span
-class="math inline">\((c1,c2,c1)\)</span>。</p></li>
-<li><p>令 <span class="math inline">\(f(i,c1,c2,2)\)</span> 表示从 <span
-class="math inline">\(i\)</span> 开始的后缀中，有多少个 <span
-class="math inline">\((c1,c2,c1,c2)\)</span>。</p></li>
-</ul>
-<p>这三个可以依次递推：<span
-class="math inline">\(f(i,c1,c2,1)\leftarrow
-f(i-1,c2,c1,0),f(i,c1,c2,2)\leftarrow f(i-1,c2,c1,1)\)</span></p>
-<p>当然，还需要预处理 <span
-class="math inline">\(g(i,c)\)</span>​，表示从 <span
-class="math inline">\(i\)</span>​ 开始的后缀中，有多少个 <span
-class="math inline">\(c\)</span>。</p>
-<p>由于转移 <span class="math inline">\(f(i)\)</span> 只需要 <span
-class="math inline">\(f(i-1)\)</span>
-的值，所以可以将第一维直接去掉，从后往前 dp
-，又因为每次在当前后缀前添加一个字符只会更新 <span
-class="math inline">\(O(m)\)</span> 个值，其他值不变，因此也可以在 <span
-class="math inline">\(O(nm)\)</span> 的复杂度内全部预处理出来。</p>
-<p>时间复杂度：<span class="math inline">\(O(nm)\)</span>​</p>
+<p>一开始想了一个看起来很可行的 dp：<span
+class="math inline">\(f(i,l,c)\)</span> 表示填了前 <span
+class="math inline">\(i\)</span> 行 <span
+class="math inline">\(l\)</span> 列，右下角为 <span
+class="math inline">\(c\)</span> 的方案数。但显然不能转移（乐）。</p>
+<p>从另一方面去考虑，分 <span class="math inline">\(26\)</span> 次（而非
+<span class="math inline">\(n\times m\)</span>
+次）填色，每一次一口气把某一种字母都填完。</p>
+<p>那么被填字母过程大概是这样：</p>
+<p><img src="https://raw.githubusercontent.com/shmilyty/img/main/data/202207272155403.png" srcset="/img/loading.gif" lazyload style="zoom:150%;" /></p>
+<p>可以发现，当前所有填的字母轮廓线是有一些特点的，具体来说，对于第
+<span class="math inline">\(i\)</span>
+行，已填的字母一定是一个前缀，并且前缀长度不长于第 <span
+class="math inline">\(i+1\)</span> 行。</p>
+<p>这样就可以 dp 了，令 <span class="math inline">\(f(i,S)\)</span>
+表示当前已经填上的字母的位置集合为 <span
+class="math inline">\(S\)</span>，已经枚举过前 <span
+class="math inline">\(i\)</span> 个字母了，有多少种方案。<span
+class="math inline">\(S\)</span> 可以用一个长为 <span
+class="math inline">\(n\)</span> 的 vector 存储，虽然理论上有 <span
+class="math inline">\(m^n\)</span>
+种，但是由于有不升的限制，因此合法状态并不多。可以用 map
+存储。在写的时候第一维是可以去掉的。</p>
+<p>写完了之后发现无法通过 <span
+class="math inline">\(n=m=10\)</span>，所有格子都是空 的数据，于是将
+vector hash 成一个数，便通过了这一题。</p>
+<p>时间复杂度：当 <span class="math inline">\(n=m\)</span> 时，状态数为
+<span class="math inline">\(26\times \binom{2n} n=\mathcal
+O(4^nn^{0.5})\)</span>，然后 map 还带了一个 log</p>
 <p>参考代码：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-type">int</span> n,ans,pre[<span class="hljs-number">1000002</span>][<span class="hljs-number">62</span>],f[<span class="hljs-number">62</span>][<span class="hljs-number">62</span>][<span class="hljs-number">2</span>],num[<span class="hljs-number">62</span>];<br><span class="hljs-type">char</span> s[<span class="hljs-number">1000001</span>];<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> mod=<span class="hljs-number">998244353</span>;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">hsh</span><span class="hljs-params">(<span class="hljs-type">char</span> c)</span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-keyword">if</span>(c&lt;=<span class="hljs-string">&#x27;9&#x27;</span>)<br>		<span class="hljs-keyword">return</span> c-<span class="hljs-string">&#x27;0&#x27;</span>;<br>	<span class="hljs-keyword">if</span>(c&lt;<span class="hljs-string">&#x27;a&#x27;</span>)<br>		<span class="hljs-keyword">return</span> c-<span class="hljs-string">&#x27;A&#x27;</span>+<span class="hljs-number">10</span>;<br>	<span class="hljs-keyword">return</span> c-<span class="hljs-string">&#x27;a&#x27;</span>+<span class="hljs-number">36</span>;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">signed</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%s&quot;</span>,s+<span class="hljs-number">1</span>);<br>	n=<span class="hljs-built_in">strlen</span>(s+<span class="hljs-number">1</span>);<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=n;i++)<br>	&#123;<br>		<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> l=<span class="hljs-number">0</span>;l&lt;<span class="hljs-number">62</span>;l++)<br>			pre[i][l]=pre[i<span class="hljs-number">-1</span>][l];<br>		pre[i][<span class="hljs-built_in">hsh</span>(s[i])]++;<br>	&#125;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=n;i;i--)<br>	&#123;<br>		<span class="hljs-type">int</span> tot=<span class="hljs-number">0</span>,x=<span class="hljs-number">0</span>;<br>		<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> l=<span class="hljs-number">0</span>;l&lt;<span class="hljs-number">62</span>;l++)<br>			<span class="hljs-keyword">if</span>(l!=<span class="hljs-built_in">hsh</span>(s[i]))<br>			&#123;<br>				(tot+=x*pre[i<span class="hljs-number">-1</span>][l]%mod)%=mod;<br>				x+=pre[i<span class="hljs-number">-1</span>][l];<br>			&#125;<br>		<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> l=<span class="hljs-number">0</span>;l&lt;<span class="hljs-number">62</span>;l++)<br>			<span class="hljs-keyword">if</span>(l!=<span class="hljs-built_in">hsh</span>(s[i]))<br>			&#123;<br>				(f[<span class="hljs-built_in">hsh</span>(s[i])][l][<span class="hljs-number">1</span>]+=f[l][<span class="hljs-built_in">hsh</span>(s[i])][<span class="hljs-number">0</span>])%=mod;<br>				(f[<span class="hljs-built_in">hsh</span>(s[i])][l][<span class="hljs-number">0</span>]+=num[l])%=mod;<br>				(ans+=f[l][<span class="hljs-built_in">hsh</span>(s[i])][<span class="hljs-number">1</span>]*(tot-(x-pre[i<span class="hljs-number">-1</span>][l])*pre[i<span class="hljs-number">-1</span>][l]%mod+mod)%mod)%=mod;<br>			&#125;<br>		num[<span class="hljs-built_in">hsh</span>(s[i])]++;<br>	&#125;<br>	cout&lt;&lt;ans;<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<hr />
-<p>总结：这一题给我的启发在于计算 <code>CDCD</code> 的部分时使用的 dp
-思想，之所以可以用二维表示长度为 <span class="math inline">\(4\)</span>​
-的字符串是因为有重复，之所以每次转移 <span
-class="math inline">\(O(1)\)</span>，总复杂度 <span
-class="math inline">\(O(nm)\)</span>
-是因为有很多重复，而且转移的时候每个后缀只有 <span
-class="math inline">\(m\)</span> 个状态是有意义的。</p>
-<p>虽然这一题不是很难，但是这个 dp 的思想适用于很多题目。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">const</span> <span class="hljs-type">int</span> mod=<span class="hljs-number">10007</span>;<br><span class="hljs-type">int</span> n,m,t,p[<span class="hljs-number">11</span>];<br>string s[<span class="hljs-number">10</span>];<br>map&lt;<span class="hljs-type">int</span>,<span class="hljs-type">int</span>&gt; f;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">hsh</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt; v)</span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-type">int</span> res=<span class="hljs-number">0</span>;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i:v)<br>		res=res*<span class="hljs-number">11</span>+i+<span class="hljs-number">1</span>;<br>	<span class="hljs-keyword">return</span> res;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">find</span><span class="hljs-params">(<span class="hljs-type">int</span> x,<span class="hljs-type">int</span> k)</span></span><br><span class="hljs-function"></span>&#123;<br>	<span class="hljs-keyword">while</span>(k--)<br>		x/=<span class="hljs-number">11</span>;<br>	<span class="hljs-keyword">return</span> x%<span class="hljs-number">11</span><span class="hljs-number">-1</span>;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">(<span class="hljs-type">int</span> x)</span></span><br><span class="hljs-function"></span>&#123;<br>	n=<span class="hljs-built_in">read</span>();<br>	m=<span class="hljs-built_in">read</span>();<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)<br>		cin&gt;&gt;s[i];<br>	f[<span class="hljs-built_in">hsh</span>(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-type">int</span>&gt;(n,<span class="hljs-number">-1</span>))]=<span class="hljs-number">1</span>;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">char</span> i=<span class="hljs-string">&#x27;a&#x27;</span>;i&lt;=<span class="hljs-string">&#x27;z&#x27;</span>;i++)<br>		<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> R=<span class="hljs-number">0</span>;R&lt;n;R++)<br>			<span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> j:f)<br>			&#123;<br>				<span class="hljs-type">int</span> val=j.second;<br>				<span class="hljs-type">int</span> v=j.first;<br>				<span class="hljs-type">int</span> C=<span class="hljs-built_in">find</span>(v,R);<br>				<span class="hljs-keyword">if</span>(C+<span class="hljs-number">1</span>&lt;m&amp;&amp;(s[R][C+<span class="hljs-number">1</span>]==<span class="hljs-string">&#x27;.&#x27;</span>||s[R][C+<span class="hljs-number">1</span>]==i)&amp;&amp;C&lt;(R?<span class="hljs-built_in">find</span>(v,R<span class="hljs-number">-1</span>):m<span class="hljs-number">-1</span>))<br>					(f[v+p[R]]+=val)%=mod;<br>			&#125;<br>	cout&lt;&lt;f[<span class="hljs-built_in">hsh</span>(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-type">int</span>&gt;(n,m<span class="hljs-number">-1</span>))]&lt;&lt;<span class="hljs-string">&#x27;\n&#x27;</span>;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">signed</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	p[<span class="hljs-number">0</span>]=<span class="hljs-number">1</span>;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;<span class="hljs-number">10</span>;i++)<br>		p[i]=p[i<span class="hljs-number">-1</span>]*<span class="hljs-number">11</span>;<br>	t=<span class="hljs-number">1</span>;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=t;i++)<br>		<span class="hljs-built_in">solve</span>(i);<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -507,11 +486,7 @@ class="math inline">\(m\)</span> 个状态是有意义的。</p>
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/codeforces/">#codeforces</a>
-      
         <a href="/tags/dp/">#dp</a>
-      
-        <a href="/tags/cf-gym/">#cf gym</a>
       
     </div>
   
@@ -523,8 +498,8 @@ class="math inline">\(m\)</span> 个状态是有意义的。</p>
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>GYM103069A Namomo Subsequence</div>
-      <div>http://shmilyty.cf/gym103069a/</div>
+      <div>gym100268k</div>
+      <div>http://shmilyty.cf/gym100268k/</div>
     </div>
     <div class="license-meta">
       
@@ -536,7 +511,7 @@ class="math inline">\(m\)</span> 个状态是有意义的。</p>
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年3月16日</div>
+          <div>2022年7月27日</div>
         </div>
       
       
@@ -566,18 +541,12 @@ class="math inline">\(m\)</span> 个状态是有意义的。</p>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/loj2026/" title="Loj2026 「JLOI / SHOI2016」成绩比较">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Loj2026 「JLOI / SHOI2016」成绩比较</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/cf1634f/" title="CF1634F Fibonacci Additions">
-                        <span class="hidden-mobile">CF1634F Fibonacci Additions</span>
+                      <a href="/abc260h/" title="ABC260Ex Colorfulness">
+                        <span class="hidden-mobile">ABC260Ex Colorfulness</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -598,7 +567,7 @@ class="math inline">\(m\)</span> 个状态是有意义的。</p>
         var options = Object.assign(
           {"clientID":"5e4c08f733e7fc45d1f2","clientSecret":"f7a40b0a40ddef3b2b2e63c35fe93be9bafedf4b","repo":"https://github.com/shmilyty/gittalk","owner":"shmilyty","admin":"shmilyty","language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","enable":true},
           {
-            id: '8cf690bc9279db65aec84bd4efbcfd2f'
+            id: '1d27f5706dd24f5a1fecbf492937cdcb'
           }
         )
         var gitalk = new Gitalk(options);
