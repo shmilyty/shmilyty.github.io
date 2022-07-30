@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/shmilyty/img/main/data/202207301227259.jpg">
 <meta property="article:published_time" content="2022-07-30T12:45:58.000Z">
-<meta property="article:modified_time" content="2022-07-30T13:52:47.841Z">
+<meta property="article:modified_time" content="2022-07-30T14:33:06.285Z">
 <meta property="article:author" content="ShmilyTY">
 <meta property="article:tag" content="dp">
 <meta name="twitter:card" content="summary_large_image">
@@ -426,9 +426,9 @@ class="math inline">\([l,r]\)</span> 区间有多少种不同的方案。</p>
 <span class="math inline">\(g(l,r)\)</span> 表示考虑当前子集的 <span
 class="math inline">\([l,r]\)</span>
 区间有多少种被钦定压缩的方案。转移如下： <span class="math display">\[
-f(l,r)=\sum_{i\in[l,r)}g[l,i]\times f(i,r]\\\\
+\displaylines {f(l,r)=\sum_{i\in[l,r)}g[l,i]\times f(i,r]\\
 g(l,r)=\sum_{i|len(l,r)}f(l,l+i-1)\bigg[s[l,l+i-1]=s[l+i,l+2\times
-i-1]=\dots=s[r-i+1,r]\bigg]
+i-1]=\dots=s[r-i+1,r]\bigg]}
 \]</span> 这一步想清楚了，感觉离正解的距离就近了一大步。</p>
 <p>如果令 <span class="math inline">\(f(l,r)\)</span> 表示考虑当前区间
 <span class="math inline">\([l,r]\)</span> 的所有子集方案数的总和，<span
