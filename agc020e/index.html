@@ -16,21 +16,34 @@
   <meta name="author" content="ShmilyTY">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="website">
-<meta property="og:title" content="分类 - editorial">
-<meta property="og:url" content="http://shmilyty.cf/categories/editorial/index.html">
+    <meta name="description" content="AGC020E">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AGC020E Encoding Subsets">
+<meta property="og:url" content="http://shmilyty.cf/agc020e/index.html">
 <meta property="og:site_name" content="¡Hola!">
+<meta property="og:description" content="AGC020E">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/shmilyty/img/main/data/202207301227259.jpg">
+<meta property="article:published_time" content="2022-07-30T12:45:58.000Z">
+<meta property="article:modified_time" content="2022-07-30T13:38:29.692Z">
 <meta property="article:author" content="ShmilyTY">
+<meta property="article:tag" content="dp">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/shmilyty/img/main/data/202207301227259.jpg">
   
   
   
-  <title>分类 - editorial - ¡Hola!</title>
+  <title>AGC020E Encoding Subsets - ¡Hola!</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
 
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
 
 
 
@@ -132,7 +145,7 @@
   <header>
     
 
-<div class="header-inner" style="height: 60vh;">
+<div class="header-inner" style="height: 100vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -307,19 +320,63 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('https://w.wallhaven.cc/full/z8/wallhaven-z8dg9y.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="分类 - editorial"></span>
+            <span id="subtitle" data-typed-text="AGC020E Encoding Subsets"></span>
           
         </div>
 
         
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-07-30 20:45" pubdate>
+          2022年7月30日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          9 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
       </div>
 
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
       
     </div>
   </div>
@@ -331,94 +388,258 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 10 篇文章</p>
-  <hr>
-  
-  
-    
       
-      <p class="h5">2022</p>
-    
-    <a href="/agc020e/" class="list-group-item list-group-item-action">
-      <time>07-30</time>
-      <div class="list-group-item-title">AGC020E Encoding Subsets</div>
-    </a>
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">AGC020E Encoding Subsets</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p><a
+target="_blank" rel="noopener" href="https://atcoder.jp/contests/agc020/tasks/agc020_e">AGC020E</a></p>
+<span id="more"></span>
+<p>模拟时碰到的感觉很厉害的一道题。</p>
+<p>吐槽一下，咋放了一个两千九的《签到题》（指一半人做出来）（悲）</p>
+<p>然后我非常的菜，甚至没有做出 <span
+class="math inline">\(n=10\)</span> 的 <span
+class="math inline">\(30\)</span> 分部分分。</p>
+<hr />
+<p>容易发现，如果从左往右进行操作，操作结果和操作序列是一一对应的，不存在两种不同的操作方法得到相同的结果。</p>
+<p>假如 <span class="math inline">\(n=10\)</span>，可以考虑枚举 <span
+class="math inline">\(S\)</span> 的子集并对每一种情况 dp，令 <span
+class="math inline">\(f(l,r)\)</span> 表示考虑当前子集的 <span
+class="math inline">\([l,r]\)</span> 区间有多少种不同的方案。</p>
+<p>我其实想到了这一步。但是转移的时候还是略显幼稚，因为总是无法不重不漏地转移：大概思路就是从中间挖掉若干个区间云云。</p>
+<p>显然，我当时没想清楚的是，如果挖掉一个区间，必须钦定其被压缩，所以还要再令
+<span class="math inline">\(g(l,r)\)</span> 表示考虑当前子集的 <span
+class="math inline">\([l,r]\)</span>
+区间有多少种被钦定压缩的方案。转移如下： <span class="math display">\[
+f(l,r)=\sum_{i\in[l,r)}g[l,i]\times f(i,r]\\
+g(l,r)=\sum_{i|len(l,r)}f(l,l+i-1)\bigg[s[l,l+i-1]=s[l+i,l+2\times
+i-1]=\dots=s[r-i+1,r]\bigg]
+\]</span> 这一步想清楚了，感觉离正解的距离就近了一大步。</p>
+<p>如果令 <span class="math inline">\(f(l,r)\)</span> 表示考虑当前区间
+<span class="math inline">\([l,r]\)</span> 的所有子集方案数的总和，<span
+class="math inline">\(g(l,r)\)</span> 同理，能否按照相同的方法转移？</p>
+<p>答案是可以的。</p>
+<p><span class="math inline">\(f\)</span> 的转移没有任何区别，尝试解决
+<span class="math inline">\(g\)</span> 的转移问题。</p>
+<p>考虑枚举长度，肯定是要转移到 <span class="math inline">\(f\)</span>
+的，因此就直接转移到 <span
+class="math inline">\(f(s[l,l+i-1]\&amp;s[l+i,l+2\times
+i-1]\&amp;\dots\&amp;s[r-i+1,r])\)</span>，其中 <span
+class="math inline">\(\&amp;\)</span>
+表示按位与。这一步也非常巧妙，愚蠢的我再一次没有想到这一点。但是可以发现，此时的字符串不一定是
+<span class="math inline">\(s\)</span>
+的子段，因此不能存区间，而应该直接存字符串，可以用 <span
+class="math inline">\(map\)</span> 记录这个东西，状态个数是不超过 <span
+class="math inline">\(\mathcal O(n^3)\)</span> 的。</p>
+<p>时间复杂度：不太确定，姑且认为是 <span class="math inline">\(\mathcal
+O(n^4)\)</span> 的，但是应该无法达到，因为虽然 <span
+class="math inline">\(f\)</span> 的转移是 <span
+class="math inline">\(\mathcal O(n)\)</span> 的，但 <span
+class="math inline">\(g\)</span> 的转移是 <span
+class="math inline">\(\mathcal O(\log n)\)</span> 的。</p>
+<hr />
+<p>总结：好像最近遇到了好几次比较绕的区间
+dp，而且一开始都没有想出来。说明对这个东西不够敏感。</p>
+<p>我一开始把子集的定义理解错了（以为是子序列），后来虽然纠正过来了，貌似也对思考造成了一些影响。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
   
     
-    <a href="/gym100268k/" class="list-group-item list-group-item-action">
-      <time>07-27</time>
-      <div class="list-group-item-title">gym100268k</div>
-    </a>
+      <span class="category-chain">
+        
+  <a href="/categories/editorial/" class="category-chain-item">editorial</a>
   
+  
+
+      </span>
     
-    <a href="/abc260h/" class="list-group-item list-group-item-action">
-      <time>07-21</time>
-      <div class="list-group-item-title">ABC260Ex Colorfulness</div>
-    </a>
   
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/dp/">#dp</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>AGC020E Encoding Subsets</div>
+      <div>http://shmilyty.cf/agc020e/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>ShmilyTY</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年7月30日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/gym100268k/" title="gym100268k">
+                        <span class="hidden-mobile">gym100268k</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  <article id="comments" lazyload>
     
-    <a href="/haltoj226/" class="list-group-item list-group-item-action">
-      <time>07-06</time>
-      <div class="list-group-item-title">Haltoj#226. [220705] Tile</div>
-    </a>
-  
-    
-    <a href="/poj2079/" class="list-group-item list-group-item-action">
-      <time>07-06</time>
-      <div class="list-group-item-title">POJ2079 Triangle</div>
-    </a>
-  
-    
-    <a href="/agc031e/" class="list-group-item list-group-item-action">
-      <time>07-06</time>
-      <div class="list-group-item-title">AGC031E Snuke the Phantom Thief</div>
-    </a>
-  
-    
-    <a href="/loj2026/" class="list-group-item list-group-item-action">
-      <time>03-16</time>
-      <div class="list-group-item-title">Loj2026 「JLOI / SHOI2016」成绩比较</div>
-    </a>
-  
-    
-    <a href="/gym103069a/" class="list-group-item list-group-item-action">
-      <time>03-16</time>
-      <div class="list-group-item-title">GYM103069A Namomo Subsequence</div>
-    </a>
-  
-    
-    <a href="/cf1634f/" class="list-group-item list-group-item-action">
-      <time>03-15</time>
-      <div class="list-group-item-title">CF1634F Fibonacci Additions</div>
-    </a>
-  
-    
-    <a href="/arc112f/" class="list-group-item list-group-item-action">
-      <time>03-11</time>
-      <div class="list-group-item-title">ARC112F Die Siedler</div>
-    </a>
-  
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.7.2/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"5e4c08f733e7fc45d1f2","clientSecret":"f7a40b0a40ddef3b2b2e63c35fe93be9bafedf4b","repo":"gittalk","owner":"shmilyty","admin":"shmilyty","language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":false,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","enable":true},
+          {
+            id: '37980d5b82ab8d0ef5920543681e79d8'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+  </article>
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
 </div>
 
 
 
 
 
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
     
 
     
@@ -512,6 +733,106 @@
 
 
 
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.1/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 
